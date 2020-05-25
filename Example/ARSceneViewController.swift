@@ -11,7 +11,8 @@ import SceneKit
 import UIKit
 
 final class ARSceneViewController: UIViewController {
-
+	
+	
     lazy var recognizer = MLRecognizer(
         model: DogCardClassifier2().model,
         sceneView: sceneView
@@ -33,6 +34,9 @@ final class ARSceneViewController: UIViewController {
         target: self, action: #selector(refreshButtonPressed)
     )
 	
+	lazy var overlay = OverlayView();
+	
+	
 	let updateQueue = DispatchQueue(label: Bundle.main.bundleIdentifier! +
 	".serialSceneKitQueue")
 
@@ -53,11 +57,39 @@ extension ARSceneViewController {
         title = "Intro to AR"
         navigationItem.rightBarButtonItem = refreshButton
 		
-		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+//		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
 		
-		sceneView.addGestureRecognizer(tapGesture)
+//		sceneView.addGestureRecognizer(tapGesture)
         view.addSubview(sceneView)
 		
+		
+//		let addedView = UINib(nibName: "OverlayView", bundle: .main).instantiate(withOwner: nil, options: nil).first as! UIView
+//		addedView.frame = CGRect(
+//			x: 20,
+//			y: (view.bounds.height-addedView.bounds.height) - 40,
+//			width: view.bounds.width - 40,
+//			height: addedView.bounds.height
+//		)
+//		addedView.layer.cornerRadius = 5
+//		addedView.layer.masksToBounds = true
+//		view.addSubview(addedView)
+		overlay.lblCard.text = "ello guv"
+		
+		print(overlay.frame.height)
+		
+		
+		
+		overlay.frame = CGRect(
+			x: 20,
+			y: (view.bounds.height - 50 - 30),
+			width: view.bounds.width - 40,
+			height: 50
+		)
+		overlay.layer.cornerRadius = 5
+		overlay.layer.masksToBounds = true
+	
+		
+		view.addSubview(overlay)
 		
         NSLayoutConstraint.activate([
             sceneView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -68,6 +100,7 @@ extension ARSceneViewController {
         view.subviews.forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
+
         resetTracking()
     }
 	
@@ -135,6 +168,7 @@ extension ARSceneViewController: ARSCNViewDelegate {
 			let imageName = referenceImage.name ?? ""
 			
 			print(imageName)
+			self.overlay.addCard(card: imageName)
 		}
 
 //        addIndicatorPlane(to: imageAnchor)

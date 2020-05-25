@@ -2,13 +2,13 @@
 //  ARSceneViewController.swift
 //  ARKitCoreML
 //
-//  Created by Jason Clark on 10/11/18.
-//  Copyright © 2018 Raizlabs. All rights reserved.
+//  Forked from Jason Clark.
+//
 //
 
 import ARKit
 import SceneKit
-import UIKit
+import UIKit 
 
 final class ARSceneViewController: UIViewController {
 	
@@ -73,17 +73,15 @@ extension ARSceneViewController {
 //		addedView.layer.cornerRadius = 5
 //		addedView.layer.masksToBounds = true
 //		view.addSubview(addedView)
-		overlay.lblCard.text = "ello guv"
 		
-		print(overlay.frame.height)
-		
-		
+		overlay.lblCard.text = "Scan a card"
+		overlay.lblHand.text = ""
 		
 		overlay.frame = CGRect(
 			x: 20,
-			y: (view.bounds.height - 50 - 30),
+			y: (view.bounds.height - 70 - 30),
 			width: view.bounds.width - 40,
-			height: 50
+			height: 70
 		)
 		overlay.layer.cornerRadius = 5
 		overlay.layer.masksToBounds = true
@@ -116,7 +114,6 @@ extension ARSceneViewController {
 		boxView.backgroundColor = .red
 		
 		if !activated {
-			
 			if (hitResults.count > 0) {
 				print("Tapped")
 				print(hitResults[0].node)
@@ -136,9 +133,6 @@ extension ARSceneViewController {
 		} else {
 
 		}
-
-		
-		
 	}
 
     func resetTracking() {
@@ -167,7 +161,6 @@ extension ARSceneViewController: ARSCNViewDelegate {
 		DispatchQueue.main.async {
 			let imageName = referenceImage.name ?? ""
 			
-			print(imageName)
 			self.overlay.addCard(card: imageName)
 		}
 
@@ -222,6 +215,7 @@ extension ARSceneViewController {
 
     @objc func refreshButtonPressed() {
         resetTracking()
+		self.overlay.resetCards()
     }
 
 }

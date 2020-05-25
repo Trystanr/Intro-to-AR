@@ -5,16 +5,37 @@
   },
   "resources" : [
     {
+      "filename" : "AceClubs.arreferenceimage"
+    },
+    {
+      "filename" : "AceDiamonds.arreferenceimage"
+    },
+    {
       "filename" : "AceHearts.arreferenceimage"
+    },
+    {
+      "filename" : "FourClubs.arreferenceimage"
+    },
+    {
+      "filename" : "JackClubs.arreferenceimage"
     },
     {
       "filename" : "JackHearts.arreferenceimage"
     },
     {
+      "filename" : "KingClubs.arreferenceimage"
+    },
+    {
       "filename" : "KingHearts.arreferenceimage"
     },
     {
+      "filename" : "QueenClubs.arreferenceimage"
+    },
+    {
       "filename" : "QueenHearts.arreferenceimage"
+    },
+    {
+      "filename" : "ThreeClubs.arreferenceimage"
     },
     {
       "filename" : "TwoHearts.arreferenceimage"

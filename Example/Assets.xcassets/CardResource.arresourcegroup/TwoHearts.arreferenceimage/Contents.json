@@ -1,9 +1,9 @@
 {
   "images" : [
-    {
-      "filename" : "Chihuahua.jpg",
-      "idiom" : "universal"
-    }
+      {
+        "filename" : "Chowchow.jpg",
+        "idiom" : "universal"
+      }
   ],
   "info" : {
     "author" : "xcode",

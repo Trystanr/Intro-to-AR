@@ -32,6 +32,9 @@ final class ARSceneViewController: UIViewController {
         barButtonSystemItem: .refresh,
         target: self, action: #selector(refreshButtonPressed)
     )
+	
+	let updateQueue = DispatchQueue(label: Bundle.main.bundleIdentifier! +
+	".serialSceneKitQueue")
 
 }
 
@@ -120,20 +123,33 @@ extension ARSceneViewController: ARSCNViewDelegate {
 
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let imageAnchor = anchor as? ARImageAnchor else { return }
+		let referenceImage = imageAnchor.referenceImage
+		
+		updateQueue.async {
+			self.addIndicatorPlane(to: imageAnchor)
+		}
 
-        addIndicatorPlane(to: imageAnchor)
+		
+
+		DispatchQueue.main.async {
+			let imageName = referenceImage.name ?? ""
+			
+			print(imageName)
+		}
+
+//        addIndicatorPlane(to: imageAnchor)
 
         // send off anchor to be screenshot and classified
-        recognizer.classify(imageAnchor: imageAnchor) { [weak self] result in
-            if case .success(let classification) = result {
-
-                // update app with classification
-                self?.attachLabel(classification, to: node)
-				print(classification)
-			} else {
-				self?.attachLabel("failed", to: node)
-			}
-        }
+//        recognizer.classify(imageAnchor: imageAnchor) { [weak self] result in
+//            if case .success(let classification) = result {
+//
+//                // update app with classification
+//                self?.attachLabel(classification, to: node)
+//				print(classification)
+//			} else {
+//				self?.attachLabel("failed", to: node)
+//			}
+//        }
     }
 
 }

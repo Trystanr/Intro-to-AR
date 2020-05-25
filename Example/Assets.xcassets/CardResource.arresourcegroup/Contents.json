@@ -5,6 +5,9 @@
   },
   "resources" : [
     {
+      "filename" : "AceHearts.arreferenceimage"
+    },
+    {
       "filename" : "JackHearts.arreferenceimage"
     },
     {
@@ -12,6 +15,9 @@
     },
     {
       "filename" : "QueenHearts.arreferenceimage"
+    },
+    {
+      "filename" : "TwoHearts.arreferenceimage"
     }
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "resources" : [
+    {
+      "filename" : "JackHearts.arreferenceimage"
+    },
+    {
+      "filename" : "KingHearts.arreferenceimage"
+    },
+    {
+      "filename" : "QueenHearts.arreferenceimage"
+    }
+  ]
+}

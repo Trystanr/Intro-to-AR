@@ -13,12 +13,12 @@ import UIKit
 final class ARSceneViewController: UIViewController {
 
     lazy var recognizer = MLRecognizer(
-        model: PlayingCards().model,
+        model: DogCardClassifier2().model,
         sceneView: sceneView
     )
 
     let detectionImages = ARReferenceImage.referenceImages(
-        inGroupNamed: "AR Resources",
+        inGroupNamed: "CardResource",
         bundle: nil
     )
 
@@ -35,15 +35,27 @@ final class ARSceneViewController: UIViewController {
 
 }
 
-extension ARSceneViewController {
+var activated = false;
+var boxView = UIView()
 
+extension ARSceneViewController {
+	
+	struct storedFunc {
+		var activated = false
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = "ARKit + CoreML"
+		
+        title = "Intro to AR"
         navigationItem.rightBarButtonItem = refreshButton
-
+		
+		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+		
+		sceneView.addGestureRecognizer(tapGesture)
         view.addSubview(sceneView)
+		
+		
         NSLayoutConstraint.activate([
             sceneView.topAnchor.constraint(equalTo: view.topAnchor),
             sceneView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -55,6 +67,43 @@ extension ARSceneViewController {
         }
         resetTracking()
     }
+	
+
+	
+	@objc
+	func handleTap(_ gestureRecognize: UIGestureRecognizer) {
+		let location = gestureRecognize.location(in: sceneView)
+		let hitResults = sceneView.hitTest(location, options: [:])
+		
+		var angles = sceneView.projectPoint(hitResults[0].node.eulerAngles)
+		boxView = UIView(frame: CGRect(x: location.x, y: location.y, width: 100, height: 40))
+		boxView.backgroundColor = .red
+		
+		if !activated {
+			
+			if (hitResults.count > 0) {
+				print("Tapped")
+				print(hitResults[0].node)
+				
+				
+				print(sceneView.projectPoint(hitResults[0].node.eulerAngles))
+				
+				sceneView.addSubview(boxView)
+				
+				UIView.animate(withDuration: 0.2) {
+					boxView.frame = CGRect(x: self.sceneView.frame.width/2-150, y: self.sceneView.frame.height/2 - 100, width: 300, height: 200)
+				}
+				
+				activated = true
+			}
+			
+		} else {
+
+		}
+
+		
+		
+	}
 
     func resetTracking() {
         let config = ARWorldTrackingConfiguration()
@@ -80,7 +129,10 @@ extension ARSceneViewController: ARSCNViewDelegate {
 
                 // update app with classification
                 self?.attachLabel(classification, to: node)
-            }
+				print(classification)
+			} else {
+				self?.attachLabel("failed", to: node)
+			}
         }
     }
 
@@ -94,8 +146,8 @@ extension ARSceneViewController {
         let size = imageAnchor.referenceImage.physicalSize
         let geometry = SCNPlane(width: size.width, height: size.height)
         let plane = SCNNode(geometry: geometry)
-        plane.geometry?.firstMaterial?.diffuse.contents = UIColor.darkGray
-        plane.geometry?.firstMaterial?.fillMode = .lines
+        plane.geometry?.firstMaterial?.diffuse.contents = UIColor.white
+		plane.geometry?.firstMaterial?.fillMode = .lines
         plane.eulerAngles.x = -.pi / 2
         node?.addChildNode(plane)
     }
@@ -104,7 +156,7 @@ extension ARSceneViewController {
     func attachLabel(_ title: String, to node: SCNNode) {
         let geometry = SCNText(string: title, extrusionDepth: 0)
         geometry.flatness = 0.1
-        geometry.firstMaterial?.diffuse.contents = UIColor.darkText
+        geometry.firstMaterial?.diffuse.contents = UIColor.white
         let text = SCNNode(geometry: geometry)
         text.scale = .init(0.00075, 0.00075, 0.00075)
         text.eulerAngles.x = -.pi / 2

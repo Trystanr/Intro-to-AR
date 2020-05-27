@@ -54,7 +54,7 @@ extension ARSceneViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-        title = "Intro to AR"
+        title = "ARPoker"
         navigationItem.rightBarButtonItem = refreshButton
 		
 //		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -81,7 +81,7 @@ extension ARSceneViewController {
 			x: 20,
 			y: (view.bounds.height - 70 - 30),
 			width: view.bounds.width - 40,
-			height: 70
+			height: 40
 		)
 		overlay.layer.cornerRadius = 5
 		overlay.layer.masksToBounds = true
@@ -152,16 +152,20 @@ extension ARSceneViewController: ARSCNViewDelegate {
         guard let imageAnchor = anchor as? ARImageAnchor else { return }
 		let referenceImage = imageAnchor.referenceImage
 		
+		let imageName = referenceImage.name ?? "undetected"
+		
 		updateQueue.async {
 			self.addIndicatorPlane(to: imageAnchor)
+			self.attachLabel(imageName, to: node)
 		}
 
-		
-
 		DispatchQueue.main.async {
-			let imageName = referenceImage.name ?? ""
-			
 			self.overlay.addCard(card: imageName)
+			
+			UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn, animations: {
+				self.overlay.frame.size.height = 160
+				self.overlay.frame.origin.y = self.sceneView.frame.height - 200
+			})
 		}
 
 //        addIndicatorPlane(to: imageAnchor)
@@ -216,6 +220,19 @@ extension ARSceneViewController {
     @objc func refreshButtonPressed() {
         resetTracking()
 		self.overlay.resetCards()
+		
+		UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: {
+			self.overlay.frame.origin.y = (self.view.bounds.height - 70 + 130)
+			self.overlay.frame.size.height = 40
+		}, completion: { _ in
+			UIView.animate(withDuration: 0.2, animations: {
+				self.overlay.frame.origin.y = (self.view.bounds.height - 70 - 30)
+			})
+		})
+		
+		
+		
+		
     }
 
 }

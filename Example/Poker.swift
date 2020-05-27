@@ -10,14 +10,13 @@ import Foundation
 
 class Poker {
 	var Cards = [String]()
-	var eval = Evaluator()
 	
 	func addCard(card: String) {
 		if Cards.count < 7 {
 			Cards.append(convertCard(card: card))
-//			print(getEvaluation())
+			
 			if (Cards.count > 5) {
-				print(getEvaluation())
+				// Evaluate 5 Hander
 			}
 	} else {
 			print("Attempted to add more than 7 cards to Cards array")
@@ -28,15 +27,19 @@ class Poker {
 		Cards.removeAll()
 	}
 	
+	func getCardCount() -> Int {
+		return Cards.count
+	}
+	
 	func getCardsAsString() -> String {
 		if Cards.count != 0 {
 			
 			var strCards = ""
 			for card in Cards {
-				strCards += card + ", "
+				strCards += card + " "
 			}
 			
-			strCards.removeLast(2)
+			strCards.removeLast(1)
 
 			return strCards
 		} else {
@@ -44,17 +47,52 @@ class Poker {
 		}
 	}
 	
+	func getCardsAsStringWithIcon() -> String {
+		var cardsWithIcon = getCardsAsString()
+		
+		cardsWithIcon = cardsWithIcon.replacingOccurrences(of: "H", with: "♥")
+		cardsWithIcon = cardsWithIcon.replacingOccurrences(of: "S", with: "♠")
+		cardsWithIcon = cardsWithIcon.replacingOccurrences(of: "C", with: "♣")
+		cardsWithIcon = cardsWithIcon.replacingOccurrences(of: "D", with: "♦")
+		
+		return cardsWithIcon
+	}
+	
+	func getLastCardAsString() -> String {
+			return Cards.last ?? ""
+	}
+	
+	func getLastCardSuiteAsString() -> String {
+			return Cards.last ?? ""
+	}
+	
 	func getCardAtIndex(i: Int) -> String {
 		return Cards[i]
+	}
+	
+	func getLastCardSuiteIcon() -> String {
+		var convertedCard = Cards.last;
+	
+		convertedCard = convertedCard!.replacingOccurrences(of: "H", with: "♥")
+		convertedCard = convertedCard!.replacingOccurrences(of: "S", with: "♠")
+		convertedCard = convertedCard!.replacingOccurrences(of: "C", with: "♣")
+		convertedCard = convertedCard!.replacingOccurrences(of: "D", with: "♦")
+		
+		let index = convertedCard!.index(convertedCard!.startIndex, offsetBy: 1)
+				
+		print(String(convertedCard![index])
+)
+		
+		return convertedCard!
 	}
 	
 	private func convertCard(card: String) -> String {
 		var convertedCard = card;
 		
-		convertedCard = convertedCard.replacingOccurrences(of: "Hearts", with: "♥")
-		convertedCard = convertedCard.replacingOccurrences(of: "Spades", with: "♠")
-		convertedCard = convertedCard.replacingOccurrences(of: "Clubs", with: "♣")
-		convertedCard = convertedCard.replacingOccurrences(of: "Diamonds", with: "♦")
+		convertedCard = convertedCard.replacingOccurrences(of: "Hearts", with: "H")
+		convertedCard = convertedCard.replacingOccurrences(of: "Spades", with: "S")
+		convertedCard = convertedCard.replacingOccurrences(of: "Clubs", with: "C")
+		convertedCard = convertedCard.replacingOccurrences(of: "Diamonds", with: "D")
 		
 		convertedCard = convertedCard.replacingOccurrences(of: "Ace", with: "A")
 		convertedCard = convertedCard.replacingOccurrences(of: "Two", with: "2")
@@ -74,38 +112,20 @@ class Poker {
 	}
 	
 	func getEvaluation() -> String {
-		if Cards.count > 1 {
-			print(eval.evaluate(cards: Cards).name)
-//			print(Cards)
-			
-//			["K♣", "A♦", "J♣", "3♣"]
-//			print(eval.evaluate(cards: ["T♣", "J♣", "Q♣", "K♣", "A♣"]).name)
-			
-//			switch eval.evaluate(cards: Cards).name {
-//			case RankName.OnePair:
-//				return "One Pair"
-//			case RankName.TwoPairs:
-//				return "Two Pairs"
-//			case RankName.ThreeOfAKind:
-//				return "Three of a Kind"
-//			case RankName.FourOfAKind:
-//				return "Four of a Kind"
-//			case RankName.HighCard:
-//				return "High Card"
-//			case RankName.Flush:
-//				return "Flush"
-//			case RankName.FullHouse:
-//				return "Full House"
-//			case RankName.Straight:
-//				return "Straight"
-//			case RankName.StraightFlush:
-//				return "Straight Flush"
-//			default:
-//				return "No Hand"
-//			}
-			return "No Hand"
+		if Cards.count == 4 {
+			return "Needs 1 More Card"
+		} else if Cards.count == 5 {
+			let SF = BCUtility.makeCardArray(from: getCardsAsString())!
+			return BCHand5.init(cards: SF)?.category.description ?? "Error"
+		} else if Cards.count == 6 {
+			return "Needs 1 More Card"
+		} else if Cards.count == 7 {
+			let SF = BCUtility.makeCardArray(from: getCardsAsString())!
+			return BCHand7.init(cards: SF)?.category.description ?? "Error"
 		} else {
-			return "Not enough Cards"
+			return "Needs " + String(5-Cards.count) + " More Cards"
 		}
 	}
+	
+	
 }

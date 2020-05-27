@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ARKitCoreML.xcodeproj">
+      location = "self:/Users/trystan/Documents/dev/Intro-to-AR/ARPoker.xcodeproj">
    </FileRef>
 </Workspace>

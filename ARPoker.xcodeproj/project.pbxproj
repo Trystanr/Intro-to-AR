@@ -22,9 +22,21 @@
 		2ABAF9902472A692006B6231 /* QueensOnly.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2ABAF98F2472A692006B6231 /* QueensOnly.mlmodel */; };
 		2ABE202C247BC728009FA2DE /* DogCardClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2ABE202B247BC728009FA2DE /* DogCardClassifier.mlmodel */; };
 		2ABE202E247BC800009FA2DE /* DogCardClassifier2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2ABE202D247BC800009FA2DE /* DogCardClassifier2.mlmodel */; };
+		2AF91F71247D12A90032367C /* NewCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AF91F70247D12A90032367C /* NewCard.xib */; };
 		2AFDBEDD247C182A00F3F775 /* Poker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEDC247C182A00F3F775 /* Poker.swift */; };
-		2AFDBEE0247C22B900F3F775 /* Evaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEDF247C22B900F3F775 /* Evaluator.swift */; };
-		2AFDBEE2247C22FD00F3F775 /* Lookups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEE1247C22FD00F3F775 /* Lookups.swift */; };
+		2AFDBEF0247C39B700F3F775 /* BCPokerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEE4247C39B700F3F775 /* BCPokerable.swift */; };
+		2AFDBEF1247C39B700F3F775 /* BCPokerScoreMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEE5247C39B700F3F775 /* BCPokerScoreMaker.swift */; };
+		2AFDBEF2247C39B700F3F775 /* BCPokerCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEE6247C39B700F3F775 /* BCPokerCategory.swift */; };
+		2AFDBEF3247C39B700F3F775 /* BCSuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEE7247C39B700F3F775 /* BCSuit.swift */; };
+		2AFDBEF4247C39B700F3F775 /* BCDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEE8247C39B700F3F775 /* BCDeck.swift */; };
+		2AFDBEF5247C39B700F3F775 /* BCWinState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEE9247C39B700F3F775 /* BCWinState.swift */; };
+		2AFDBEF6247C39B700F3F775 /* BCUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEEA247C39B700F3F775 /* BCUtility.swift */; };
+		2AFDBEF7247C39B700F3F775 /* BCCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEEB247C39B700F3F775 /* BCCard.swift */; };
+		2AFDBEF8247C39B700F3F775 /* BCRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEEC247C39B700F3F775 /* BCRank.swift */; };
+		2AFDBEF9247C39B700F3F775 /* BCHandEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEED247C39B700F3F775 /* BCHandEvaluator.swift */; };
+		2AFDBEFA247C39B700F3F775 /* BCHand5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEEE247C39B700F3F775 /* BCHand5.swift */; };
+		2AFDBEFB247C39B700F3F775 /* BCHand7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEEF247C39B700F3F775 /* BCHand7.swift */; };
+		2AFDBEFF247C793200F3F775 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFDBEFE247C793200F3F775 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +44,7 @@
 		00428507217E499A005F53EB /* CoreImage+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreImage+Utility.swift"; sourceTree = "<group>"; };
 		00428508217E499A005F53EB /* UIImage+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Utilities.swift"; sourceTree = "<group>"; };
 		00428509217E499A005F53EB /* MLRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLRecognizer.swift; sourceTree = "<group>"; };
-		006E917B216F91620064F7DE /* ARKitCoreML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitCoreML.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		006E917B216F91620064F7DE /* ARPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006E917E216F91620064F7DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		006E9185216F91630064F7DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		006E918A216F91630064F7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,9 +57,21 @@
 		2ABAF98F2472A692006B6231 /* QueensOnly.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = QueensOnly.mlmodel; path = Example/MLModels/QueensOnly.mlmodel; sourceTree = SOURCE_ROOT; };
 		2ABE202B247BC728009FA2DE /* DogCardClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogCardClassifier.mlmodel; path = Example/MLModels/DogCardClassifier.mlmodel; sourceTree = SOURCE_ROOT; };
 		2ABE202D247BC800009FA2DE /* DogCardClassifier2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = DogCardClassifier2.mlmodel; path = Example/MLModels/DogCardClassifier2.mlmodel; sourceTree = SOURCE_ROOT; };
+		2AF91F70247D12A90032367C /* NewCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCard.xib; sourceTree = "<group>"; };
 		2AFDBEDC247C182A00F3F775 /* Poker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poker.swift; sourceTree = "<group>"; };
-		2AFDBEDF247C22B900F3F775 /* Evaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluator.swift; sourceTree = "<group>"; };
-		2AFDBEE1247C22FD00F3F775 /* Lookups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lookups.swift; sourceTree = "<group>"; };
+		2AFDBEE4247C39B700F3F775 /* BCPokerable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCPokerable.swift; sourceTree = "<group>"; };
+		2AFDBEE5247C39B700F3F775 /* BCPokerScoreMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCPokerScoreMaker.swift; sourceTree = "<group>"; };
+		2AFDBEE6247C39B700F3F775 /* BCPokerCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCPokerCategory.swift; sourceTree = "<group>"; };
+		2AFDBEE7247C39B700F3F775 /* BCSuit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCSuit.swift; sourceTree = "<group>"; };
+		2AFDBEE8247C39B700F3F775 /* BCDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCDeck.swift; sourceTree = "<group>"; };
+		2AFDBEE9247C39B700F3F775 /* BCWinState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCWinState.swift; sourceTree = "<group>"; };
+		2AFDBEEA247C39B700F3F775 /* BCUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCUtility.swift; sourceTree = "<group>"; };
+		2AFDBEEB247C39B700F3F775 /* BCCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCCard.swift; sourceTree = "<group>"; };
+		2AFDBEEC247C39B700F3F775 /* BCRank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCRank.swift; sourceTree = "<group>"; };
+		2AFDBEED247C39B700F3F775 /* BCHandEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCHandEvaluator.swift; sourceTree = "<group>"; };
+		2AFDBEEE247C39B700F3F775 /* BCHand5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCHand5.swift; sourceTree = "<group>"; };
+		2AFDBEEF247C39B700F3F775 /* BCHand7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BCHand7.swift; sourceTree = "<group>"; };
+		2AFDBEFE247C793200F3F775 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +109,7 @@
 		006E917C216F91620064F7DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				006E917B216F91620064F7DE /* ARKitCoreML.app */,
+				006E917B216F91620064F7DE /* ARPoker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,7 +117,8 @@
 		006E917D216F91620064F7DE /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				2AFDBEDE247C22AA00F3F775 /* Evaluator */,
+				2A9A9F37247D109800AFEFC3 /* Card */,
+				2AFDBEE3247C39B700F3F775 /* BitCardPoker */,
 				2AA03BE3247C07CB0021461B /* Overlay */,
 				2AA03BE2247C07930021461B /* MLModels */,
 				006E917E216F91620064F7DE /* AppDelegate.swift */,
@@ -104,6 +129,15 @@
 				2AFDBEDC247C182A00F3F775 /* Poker.swift */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		2A9A9F37247D109800AFEFC3 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				2AF91F70247D12A90032367C /* NewCard.xib */,
+				2AFDBEFE247C793200F3F775 /* CardView.swift */,
+			);
+			path = Card;
 			sourceTree = "<group>";
 		};
 		2AA03BE2247C07930021461B /* MLModels */ = {
@@ -127,21 +161,31 @@
 			path = Overlay;
 			sourceTree = "<group>";
 		};
-		2AFDBEDE247C22AA00F3F775 /* Evaluator */ = {
+		2AFDBEE3247C39B700F3F775 /* BitCardPoker */ = {
 			isa = PBXGroup;
 			children = (
-				2AFDBEDF247C22B900F3F775 /* Evaluator.swift */,
-				2AFDBEE1247C22FD00F3F775 /* Lookups.swift */,
+				2AFDBEE4247C39B700F3F775 /* BCPokerable.swift */,
+				2AFDBEE5247C39B700F3F775 /* BCPokerScoreMaker.swift */,
+				2AFDBEE6247C39B700F3F775 /* BCPokerCategory.swift */,
+				2AFDBEE7247C39B700F3F775 /* BCSuit.swift */,
+				2AFDBEE8247C39B700F3F775 /* BCDeck.swift */,
+				2AFDBEE9247C39B700F3F775 /* BCWinState.swift */,
+				2AFDBEEA247C39B700F3F775 /* BCUtility.swift */,
+				2AFDBEEB247C39B700F3F775 /* BCCard.swift */,
+				2AFDBEEC247C39B700F3F775 /* BCRank.swift */,
+				2AFDBEED247C39B700F3F775 /* BCHandEvaluator.swift */,
+				2AFDBEEE247C39B700F3F775 /* BCHand5.swift */,
+				2AFDBEEF247C39B700F3F775 /* BCHand7.swift */,
 			);
-			path = Evaluator;
+			path = BitCardPoker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		006E917A216F91620064F7DE /* ARKitCoreML */ = {
+		006E917A216F91620064F7DE /* ARPoker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 006E918D216F91630064F7DE /* Build configuration list for PBXNativeTarget "ARKitCoreML" */;
+			buildConfigurationList = 006E918D216F91630064F7DE /* Build configuration list for PBXNativeTarget "ARPoker" */;
 			buildPhases = (
 				006E9177216F91620064F7DE /* Sources */,
 				006E9178216F91620064F7DE /* Frameworks */,
@@ -151,9 +195,9 @@
 			);
 			dependencies = (
 			);
-			name = ARKitCoreML;
+			name = ARPoker;
 			productName = ARKitCoreML;
-			productReference = 006E917B216F91620064F7DE /* ARKitCoreML.app */;
+			productReference = 006E917B216F91620064F7DE /* ARPoker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -171,7 +215,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 006E9176216F91620064F7DE /* Build configuration list for PBXProject "ARKitCoreML" */;
+			buildConfigurationList = 006E9176216F91620064F7DE /* Build configuration list for PBXProject "ARPoker" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -184,7 +228,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				006E917A216F91620064F7DE /* ARKitCoreML */,
+				006E917A216F91620064F7DE /* ARPoker */,
 			);
 		};
 /* End PBXProject section */
@@ -197,6 +241,7 @@
 				006E9186216F91630064F7DE /* Assets.xcassets in Resources */,
 				2AA03BE1247BFFA50021461B /* OverlayView.xib in Resources */,
 				006E919D2171248C0064F7DE /* LaunchScreen.storyboard in Resources */,
+				2AF91F71247D12A90032367C /* NewCard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,19 +252,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AFDBEF0247C39B700F3F775 /* BCPokerable.swift in Sources */,
 				2ABE202C247BC728009FA2DE /* DogCardClassifier.mlmodel in Sources */,
-				2AFDBEE0247C22B900F3F775 /* Evaluator.swift in Sources */,
 				006E9191216F92B90064F7DE /* ARSceneViewController.swift in Sources */,
+				2AFDBEF5247C39B700F3F775 /* BCWinState.swift in Sources */,
 				2ABE202E247BC800009FA2DE /* DogCardClassifier2.mlmodel in Sources */,
+				2AFDBEFA247C39B700F3F775 /* BCHand5.swift in Sources */,
+				2AFDBEF2247C39B700F3F775 /* BCPokerCategory.swift in Sources */,
+				2AFDBEF8247C39B700F3F775 /* BCRank.swift in Sources */,
 				2AA03BDD247BE6060021461B /* OverlayViewOld.swift in Sources */,
 				0042850A217E499A005F53EB /* ARKit+Utilities.swift in Sources */,
+				2AFDBEF9247C39B700F3F775 /* BCHandEvaluator.swift in Sources */,
 				0042850B217E499A005F53EB /* CoreImage+Utility.swift in Sources */,
 				0042850D217E499A005F53EB /* MLRecognizer.swift in Sources */,
-				2AFDBEE2247C22FD00F3F775 /* Lookups.swift in Sources */,
 				0042850C217E499A005F53EB /* UIImage+Utilities.swift in Sources */,
 				2ABAF9902472A692006B6231 /* QueensOnly.mlmodel in Sources */,
+				2AFDBEF7247C39B700F3F775 /* BCCard.swift in Sources */,
 				2AA03BDF247BF5DF0021461B /* OverlayView.swift in Sources */,
 				2AB930432472DFFD000932C5 /* Cards.mlmodel in Sources */,
+				2AFDBEF4247C39B700F3F775 /* BCDeck.swift in Sources */,
+				2AFDBEF6247C39B700F3F775 /* BCUtility.swift in Sources */,
+				2AFDBEFF247C793200F3F775 /* CardView.swift in Sources */,
+				2AFDBEF3247C39B700F3F775 /* BCSuit.swift in Sources */,
+				2AFDBEFB247C39B700F3F775 /* BCHand7.swift in Sources */,
+				2AFDBEF1247C39B700F3F775 /* BCPokerScoreMaker.swift in Sources */,
 				006E917F216F91620064F7DE /* AppDelegate.swift in Sources */,
 				2AFDBEDD247C182A00F3F775 /* Poker.swift in Sources */,
 			);
@@ -355,10 +411,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.trystan.ARKitCoreML;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trystan.ARPoker;
+				PRODUCT_NAME = ARPoker;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -373,17 +429,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.trystan.ARKitCoreML;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trystan.ARPoker;
+				PRODUCT_NAME = ARPoker;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		006E9176216F91620064F7DE /* Build configuration list for PBXProject "ARKitCoreML" */ = {
+		006E9176216F91620064F7DE /* Build configuration list for PBXProject "ARPoker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				006E918B216F91630064F7DE /* Debug */,
@@ -392,7 +448,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		006E918D216F91630064F7DE /* Build configuration list for PBXNativeTarget "ARKitCoreML" */ = {
+		006E918D216F91630064F7DE /* Build configuration list for PBXNativeTarget "ARPoker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				006E918E216F91630064F7DE /* Debug */,

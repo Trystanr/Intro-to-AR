@@ -1,5 +1,27 @@
 # Intro To Augmented Reality 302
-_Trystan Rivers 2020_
+
+<h3 align="center">Trystan Rivers 2020</h3>
+<br />
+<br />
+<p align="center">
+   
+  <a href="https://github.com/Trystanr/Intro-to-AR">
+    <img src="Images/App-Icon.png" alt="Logo" width="140" height="140">
+  </a>
+  
+  <h3 align="center">ARPoker</h3>
+
+  <p align="center">
+    learn poker the right way
+    <br />
+    <a href="#about-the-project"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://www.youtube.com/watch?v=h-PFgPhgUmQ">View Demo</a>
+    ·
+    <a href="https://www.youtube.com/watch?v=HjCTEK23mbA">Advert Spot</a>
+  </p>
+</p>
 
 ### Stages of Discovery
 
@@ -17,9 +39,24 @@ Reason: ARKit reference images need to be optimized for reliability and performa
 
 ### Prototype
 	
+<p align="center">
+   
+  <a href="https://github.com/Trystanr/Intro-to-AR">
+    <img src="Images/Prototype.jpg" alt="Prototype Image" width="400">
+  </a>
+
+</p>
 
 
 ### Completed Product
+
+<p align="center">
+   
+  <a href="https://github.com/Trystanr/Intro-to-AR">
+    <img src="Images/Screenshot.jpg" alt="Screenshot Image of ARPoker app" width="400">
+  </a>
+
+</p>
 
 
 

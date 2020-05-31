@@ -23,6 +23,41 @@
   </p>
 </p>
 
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Custom Cards](#custom-cards)
+  * [Built With](#built-with)
+* [Stages of Discovery](#stages-of-discovery)
+  * [Prototype](#prototype)
+  * [Completed Product](#completed-product)
+* [App Features](#app-features)
+* [User Guide](#user-guide)
+  * [Installing and running the project](#installing-and-running-the-project)
+  * [Using the app](#using-the-app)
+* [Demo Video](#demo-video)
+* [Extremely helpful projects](#extremely-helpful-projects)
+
+
+## About The Project
+
+Are you interested in learning the rules of poker? Would you like to engage in a worldwide phenomenon of Texas Hold 'Em but you're not sure where to start?
+
+ARPoker is an augmented reality app which teaches you about the hands of poker in the best way possible - through augmented reality. 
+
+The brief for this project was to create an augmented reality experience that responds to or enhances a real life object.
+
+### Custom Cards
+
+If you would like to use the app yourself, you need a custom deck of cards. Instructions on obtaining the deck or altering the code to include your deck is avaliable on command.
+
+### Built With
+
+* [Xcode](https://developer.apple.com/xcode/)
+* [Swift](https://developer.apple.com/swift/)
+* [ARKit](https://developer.apple.com/augmented-reality/)
+
+
 ### Stages of Discovery
 
 1. ARKit Image Detection - I explored Apples built in method for detecting images in an AR Experience. This was done using [Apple's official ARKit Image Detection project](https://developer.apple.com/documentation/arkit/detecting_images_in_an_ar_experience).
@@ -102,6 +137,9 @@ Reason: ARKit reference images need to be optimized for reliability and performa
 
 
 ### Extremely helpful projects: 
+I couldn't have completed my own project without the core principles and frameworks these apps taught.
+
+
 [ARKit-CoreML](https://github.com/Rightpoint/ARKit-CoreML) - Provided a framework for Machine Learning in AR, as well as a framework for this app
 
 [BitCardPoker](https://github.com/floatmingo/BitCardPoker) - Provides a library for evaluating poker hands, extremely useful and works well

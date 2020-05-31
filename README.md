@@ -64,5 +64,6 @@ Reason: ARKit reference images need to be optimized for reliability and performa
 
 
 ### Extremely helpful projects: 
-https://github.com/Rightpoint/ARKit-CoreML - Provided a framework for Machine Learning in AR, as well as a framework for this app
-https://github.com/floatmingo/BitCardPoker - Provides a library for evaluating poker hands, extremely useful and works well
+[ARKit-CoreML](https://github.com/Rightpoint/ARKit-CoreML) - Provided a framework for Machine Learning in AR, as well as a framework for this app
+
+[BitCardPoker](https://github.com/floatmingo/BitCardPoker) - Provides a library for evaluating poker hands, extremely useful and works well

@@ -53,7 +53,7 @@ class CardView: UIView {
 
 	func animate() {
 		self.frame.origin.y = 100
-		self.alpha = 0;
+		self.alpha = 0; 
 		
 		UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveEaseOut, animations: {
 			self.frame.origin.y -= 100
